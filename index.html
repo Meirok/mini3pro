@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DJI Mini 3 Pro + 5 baterías — USD 800 · Única unidad</title>
+<meta name="description" content="DJI Mini 3 Pro en excelente estado con 5 baterías inteligentes y control RC-N1. Casi 3 horas de vuelo. USD 800. Única unidad.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f2f3f5; --bg-2:#e9eaee; --white:#fff;
+    --ink:#141518; --soft:#6b6f76; --line:#dcdee3;
+    --orange:#1e9fd6; --orange-soft:#5cc3ec;
+    --dark:#121316; --dark-2:#1a1c20;
+    --wa:#1fbf5f; --wa-dark:#169a4b; --pill:999px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:Inter,"Helvetica Neue",-apple-system,"Segoe UI",Arial,sans-serif;
+    color:var(--ink);line-height:1.5;overflow-x:hidden;
+    background:linear-gradient(180deg,#f5f6f8 0%,var(--bg) 40%,#eceef1 100%);
+    -webkit-font-smoothing:antialiased;
+  }
+  a{text-decoration:none;color:inherit}
+  img{max-width:100%;display:block}
+
+  #progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--orange),var(--orange-soft));z-index:95;box-shadow:0 0 12px rgba(30,159,214,.5)}
+
+  .productbar{
+    position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;
+    padding:0 clamp(16px,4vw,48px);height:56px;
+    background:rgba(245,246,248,.8);
+    backdrop-filter:saturate(180%) blur(16px);-webkit-backdrop-filter:saturate(180%) blur(16px);
+    border-bottom:1px solid var(--line);
+  }
+  .productbar .name{font-size:15px;font-weight:600;letter-spacing:-.01em}
+  .productbar .right{display:flex;align-items:center;gap:18px}
+  .productbar .price{font-size:14px;color:var(--soft)}
+  .productbar .price b{color:var(--ink);font-weight:600}
+
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;border-radius:var(--pill);
+    font-size:15px;font-weight:600;letter-spacing:-.01em;
+    padding:13px 28px;border:none;cursor:pointer;position:relative;overflow:hidden;
+    transition:transform .18s ease,box-shadow .18s ease,background .18s ease;
+  }
+  .btn:hover{transform:translateY(-2px) scale(1.02)}
+  .btn:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+  .btn-orange{background:var(--orange);color:#fff;box-shadow:0 10px 26px rgba(30,159,214,.30)}
+  .btn-orange:hover{background:#1a8fc4;box-shadow:0 14px 32px rgba(30,159,214,.4)}
+  .btn-orange.small{padding:9px 20px;font-size:14px;box-shadow:0 6px 16px rgba(30,159,214,.25)}
+  .btn-orange::after{
+    content:"";position:absolute;top:0;left:-90%;width:45%;height:100%;
+    background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);
+    transform:skewX(-20deg);animation:shine 4.6s ease-in-out infinite;
+  }
+  @keyframes shine{0%,55%{left:-90%}75%,100%{left:150%}}
+  .btn-quiet{background:rgba(20,21,24,.05);color:var(--ink)}
+  .btn-quiet:hover{background:rgba(20,21,24,.09)}
+  .wa-ico{width:18px;height:18px;flex:none}
+
+  /* ============ HERO CINEMÁTICO ============ */
+  .hero{
+    position:relative;text-align:center;overflow:hidden;
+    padding:clamp(48px,7vh,80px) 20px clamp(30px,5vh,60px);
+    min-height:92vh;display:flex;flex-direction:column;justify-content:flex-start;
+    perspective:1200px;
+  }
+  .herocontent{position:relative;z-index:4;will-change:transform,opacity}
+
+  /* Entrada cinematográfica */
+  @keyframes riseIn{
+    from{opacity:0;transform:translateY(34px);filter:blur(10px)}
+    to{opacity:1;transform:none;filter:none}
+  }
+  @keyframes droneIn{
+    0%{opacity:0;transform:translateY(120px) scale(.86);filter:blur(14px)}
+    60%{opacity:1;filter:blur(0)}
+    80%{transform:translateY(-14px) scale(1.01)}
+    100%{opacity:1;transform:translateY(0) scale(1)}
+  }
+  @keyframes ghostIn{
+    from{opacity:0;letter-spacing:.2em}
+    to{opacity:1;letter-spacing:-.02em}
+  }
+  .anim{opacity:0;animation:riseIn .9s cubic-bezier(.22,.9,.3,1) forwards}
+  .anim.a1{animation-delay:.05s} .anim.a2{animation-delay:.18s} .anim.a3{animation-delay:.32s}
+  .anim.a4{animation-delay:.44s} .anim.a5{animation-delay:.58s} .anim.a6{animation-delay:.72s}
+
+  .badge{
+    display:inline-flex;align-items:center;gap:9px;
+    font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--soft);background:#fff;border:1px solid var(--line);
+    padding:9px 20px;border-radius:var(--pill);margin-bottom:24px;
+    box-shadow:0 2px 10px rgba(0,0,0,.04);
+  }
+  .badge .dot{width:8px;height:8px;border-radius:50%;background:var(--orange);animation:pulse 2s infinite}
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(30,159,214,.5)}
+    70%{box-shadow:0 0 0 10px rgba(30,159,214,0)}
+    100%{box-shadow:0 0 0 0 rgba(30,159,214,0)}
+  }
+  .hero h1{font-size:clamp(40px,7.4vw,80px);font-weight:600;letter-spacing:-.035em;line-height:1.02}
+  .hero h1 .thin{font-weight:300;color:#3c3f45}
+  .hero .tagline{font-size:clamp(16px,2.2vw,21px);font-weight:300;color:var(--soft);margin-top:14px}
+  .hero .tagline b{color:var(--ink);font-weight:600}
+  .pricebox{margin-top:22px}
+  .pricebox .was{font-size:15px;color:#9a9ea6}
+  .pricebox .now{font-size:clamp(36px,5.2vw,54px);font-weight:600;letter-spacing:-.03em;margin-top:2px}
+  .pricebox .now em{
+    font-style:normal;
+    background:linear-gradient(100deg,var(--orange) 42%,#bfe6f9 50%,var(--orange) 58%);
+    background-size:220% 100%;
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    animation:shimmer 3.6s linear infinite;
+  }
+  @keyframes shimmer{from{background-position:120% 0}to{background-position:-120% 0}}
+  .pricebox .now small{font-size:.3em;font-weight:500;color:var(--soft);margin-left:10px;vertical-align:middle;letter-spacing:.06em}
+  .hero .ctas{margin-top:26px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .microcopy{margin-top:13px;font-size:13px;color:#9a9ea6}
+
+  /* Escenario del drone */
+  .stage{
+    position:relative;margin:clamp(4px,3vh,30px) auto 0;
+    max-width:900px;width:100%;flex:1;min-height:300px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .ghost{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-54%);
+    font-size:clamp(88px,19vw,240px);font-weight:800;letter-spacing:-.02em;
+    color:transparent;-webkit-text-stroke:2px rgba(20,21,24,.10);
+    white-space:nowrap;user-select:none;pointer-events:none;z-index:1;
+    opacity:0;animation:ghostIn 1.4s ease .5s forwards;
+    will-change:transform;
+  }
+  .droneOuter{position:relative;z-index:3;width:min(88%,760px);will-change:transform;transition:transform .1s linear}
+  .droneFloat{animation:droneIn 1.5s cubic-bezier(.22,.9,.3,1) .45s both, float 6s ease-in-out 1.95s infinite}
+  .droneFloat img{
+    width:100%;
+    filter:drop-shadow(0 40px 60px rgba(20,21,24,.32));
+  }
+  @keyframes float{0%,100%{transform:translateY(0) rotateZ(0deg)}50%{transform:translateY(-16px) rotateZ(-.6deg)}}
+  .droneshadow{
+    width:46%;height:16px;margin:34px auto 0;border-radius:50%;
+    background:radial-gradient(closest-side,rgba(20,21,24,.32),transparent 70%);
+    filter:blur(3px);
+    animation:shadow 6s ease-in-out 1.95s infinite;opacity:0;
+    animation-fill-mode:both;
+  }
+  @keyframes shadow{
+    0%,100%{transform:scaleX(1);opacity:.85}
+    50%{transform:scaleX(.8);opacity:.5}
+  }
+  /* Chips flotantes con profundidad */
+  .chip{
+    position:absolute;z-index:5;
+    background:rgba(255,255,255,.92);backdrop-filter:blur(8px);
+    border:1px solid var(--line);border-radius:var(--pill);
+    padding:9px 16px;font-size:13px;font-weight:600;letter-spacing:-.01em;
+    box-shadow:0 10px 26px rgba(20,21,24,.12);
+    display:inline-flex;align-items:center;gap:8px;white-space:nowrap;
+    will-change:transform;
+  }
+  .chip b{color:var(--orange)}
+  .chipFloat{animation:chipfloat 5.5s ease-in-out infinite}
+  .chip.c1{top:10%;left:2%} .chip.c1 .chipFloat-inner{animation-delay:0s}
+  .chip.c2{top:22%;right:1%}
+  .chip.c3{bottom:16%;left:7%}
+  .chip .inner{display:inline-flex;align-items:center;gap:8px}
+  @keyframes chipfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-11px)}}
+  .chip{opacity:0;animation:riseIn .8s cubic-bezier(.22,.9,.3,1) forwards, chipfloat 5.5s ease-in-out 2s infinite}
+  .chip.c1{animation-delay:1.1s,2s}
+  .chip.c2{animation-delay:1.3s,3.2s}
+  .chip.c3{animation-delay:1.5s,4.1s}
+  @media (max-width:640px){
+    .hero{min-height:auto}
+    .chip{font-size:11px;padding:7px 12px}
+    .chip.c1{top:2%;left:0} .chip.c2{top:14%;right:0} .chip.c3{bottom:6%;left:2%}
+    .ghost{-webkit-text-stroke:1.5px rgba(20,21,24,.10)}
+  }
+  .scrollhint{
+    position:relative;z-index:4;margin:18px auto 0;width:26px;height:42px;
+    border:2px solid rgba(20,21,24,.25);border-radius:14px;
+    opacity:0;animation:riseIn .8s ease 1.8s forwards;
+  }
+  .scrollhint::before{
+    content:"";position:absolute;left:50%;top:8px;width:4px;height:8px;margin-left:-2px;
+    border-radius:2px;background:var(--orange);
+    animation:wheel 1.8s ease-in-out infinite;
+  }
+  @keyframes wheel{0%{transform:translateY(0);opacity:1}70%{transform:translateY(14px);opacity:0}100%{transform:translateY(0);opacity:0}}
+
+  /* ---------- Strip ---------- */
+  .strip{
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    background:rgba(255,255,255,.55);overflow:hidden;white-space:nowrap;padding:13px 0;
+  }
+  .strip .track{display:inline-block;animation:scroll 24s linear infinite}
+  .strip span{
+    display:inline-block;margin:0 26px;font-size:12px;font-weight:600;
+    letter-spacing:.2em;text-transform:uppercase;color:#8a8f98;
+  }
+  .strip span i{color:var(--orange);font-style:normal;margin-right:26px}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  .highlights{padding:clamp(46px,7vh,76px) 20px}
+  .highlights .grid{
+    max-width:1080px;margin:0 auto;display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:34px 20px;text-align:center;
+  }
+  .hl .big{font-size:clamp(26px,3.4vw,38px);font-weight:600;letter-spacing:-.02em}
+  .hl .big .u{font-size:.5em;font-weight:500;color:var(--soft);margin-left:2px}
+  .hl .label{font-size:13px;color:var(--soft);margin-top:6px}
+
+  section{padding:clamp(64px,10vh,110px) 20px}
+  .container{max-width:1080px;margin:0 auto}
+  .kicker{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--orange);font-weight:700;margin-bottom:14px}
+  h2{font-size:clamp(30px,4.6vw,48px);font-weight:600;letter-spacing:-.03em;line-height:1.08}
+  .lead{font-size:clamp(16px,2vw,19px);font-weight:300;color:var(--soft);margin-top:16px;max-width:640px}
+  .lead b{color:var(--ink);font-weight:600}
+
+  .edrow{
+    display:grid;gap:clamp(28px,5vw,72px);align-items:center;
+    grid-template-columns:1fr 1fr;
+    padding:clamp(34px,5vh,56px) 0;
+  }
+  .edrow .photo{
+    border-radius:28px;overflow:hidden;background:var(--bg-2);
+    box-shadow:0 24px 60px rgba(20,21,24,.10);
+    aspect-ratio:4/5;position:relative;
+    will-change:transform;transition:box-shadow .3s ease;
+  }
+  .edrow .photo:hover{box-shadow:0 34px 80px rgba(20,21,24,.16)}
+  .edrow .photo img{width:100%;height:118%;object-fit:cover;position:absolute;top:-9%;left:0;will-change:transform}
+  .edrow.flip .photo{order:2}
+  .edrow h3{font-size:clamp(24px,3.2vw,36px);font-weight:600;letter-spacing:-.025em;line-height:1.12}
+  .edrow p{font-size:clamp(15px,1.9vw,17px);font-weight:300;color:var(--soft);margin-top:14px;max-width:440px}
+  .edrow .mini{display:flex;gap:26px;margin-top:24px;flex-wrap:wrap}
+  .edrow .mini div b{display:block;font-size:20px;font-weight:600;letter-spacing:-.01em}
+  .edrow .mini div span{font-size:12px;color:#9a9ea6;letter-spacing:.06em;text-transform:uppercase}
+  @media (max-width:760px){
+    .edrow{grid-template-columns:1fr}
+    .edrow.flip .photo{order:0}
+  }
+
+  .darksec{
+    background:linear-gradient(180deg,var(--dark) 0%,var(--dark-2) 100%);
+    color:#f2f3f5;border-radius:clamp(24px,4vw,44px);
+    max-width:1180px;margin:0 auto;
+    padding:clamp(56px,8vh,90px) clamp(22px,5vw,70px);
+    position:relative;overflow:hidden;
+  }
+  .darksec::before{
+    content:"";position:absolute;inset:-40%;
+    background:conic-gradient(from 0deg, transparent 0 84%, rgba(30,159,214,.14) 92%, transparent 100%);
+    animation:sweep 9s linear infinite;pointer-events:none;
+  }
+  @keyframes sweep{to{transform:rotate(1turn)}}
+  .darkwrap{display:grid;gap:clamp(30px,5vw,64px);align-items:center;grid-template-columns:.9fr 1.1fr;position:relative}
+  .darksec .photo{border-radius:24px;overflow:hidden;aspect-ratio:4/5;position:relative}
+  .darksec .photo img{width:100%;height:118%;object-fit:cover;position:absolute;top:-9%;left:0;will-change:transform}
+  .darksec .kicker{color:var(--orange-soft)}
+  .darksec h2{color:#fff}
+  .darksec .lead{color:#a7abb3}
+  .darksec .lead b{color:#fff}
+  .batrow{margin-top:34px;display:flex;gap:12px;flex-wrap:wrap}
+  .bat{
+    width:64px;height:100px;border-radius:14px;position:relative;flex:none;overflow:hidden;
+    border:2px solid rgba(92,195,236,.55);background:rgba(255,255,255,.03);
+  }
+  .bat::before{
+    content:"";position:absolute;top:-8px;left:50%;transform:translateX(-50%);
+    width:24px;height:8px;border-radius:4px 4px 0 0;background:rgba(92,195,236,.55);
+  }
+  .bat .fill{
+    position:absolute;left:0;right:0;bottom:0;height:0;
+    background:linear-gradient(180deg,var(--orange-soft),var(--orange));
+    box-shadow:0 0 22px rgba(30,159,214,.5);
+    transition:height 1.1s cubic-bezier(.22,.9,.3,1);
+  }
+  .bat.in .fill{height:100%;animation:batGlow 2.8s ease-in-out 1.3s infinite}
+  @keyframes batGlow{0%,100%{box-shadow:0 0 18px rgba(30,159,214,.45)}50%{box-shadow:0 0 34px rgba(30,159,214,.85)}}
+  .bat .num{
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    font-size:19px;font-weight:700;color:#fff;z-index:2;text-shadow:0 1px 6px rgba(0,0,0,.4);
+  }
+  .battotal{margin-top:26px;font-size:clamp(21px,3vw,28px);font-weight:600;letter-spacing:-.01em}
+  .battotal span{color:var(--orange-soft)}
+  .batsub{color:#8a8f98;font-size:14px;margin-top:6px;font-weight:300}
+  @media (max-width:820px){.darkwrap{grid-template-columns:1fr}}
+
+  .extras{margin-top:52px;display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
+  .exshot{
+    position:relative;border-radius:24px;overflow:hidden;background:var(--bg-2);
+    box-shadow:0 18px 44px rgba(20,21,24,.09);aspect-ratio:3/4;
+    will-change:transform;transition:box-shadow .3s ease;
+  }
+  .exshot:hover{box-shadow:0 28px 60px rgba(20,21,24,.15)}
+  .exshot img{width:100%;height:118%;object-fit:cover;position:absolute;top:-9%;left:0;will-change:transform}
+  .exshot .cap{
+    position:absolute;left:0;right:0;bottom:0;padding:40px 18px 15px;z-index:2;
+    background:linear-gradient(180deg,transparent,rgba(10,11,13,.72));
+    color:#fff;font-size:13px;font-weight:600;letter-spacing:-.01em;
+  }
+  @media (max-width:900px){.extras{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:520px){.extras{grid-template-columns:1fr}}
+
+  .includes{background:rgba(255,255,255,.6);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .incwrap{margin-top:44px;display:grid;gap:40px;align-items:center;grid-template-columns:1.05fr .95fr}
+  .incphoto{border-radius:28px;padding:30px;background:#fff;box-shadow:0 24px 60px rgba(20,21,24,.08)}
+  .inclist{display:grid;gap:12px}
+  .incitem{
+    background:#fff;border:1px solid var(--line);border-radius:16px;
+    padding:17px 22px;display:flex;align-items:center;gap:14px;
+    font-size:15px;font-weight:500;
+    transition:transform .2s ease,box-shadow .2s ease;
+  }
+  .incitem:hover{transform:translateX(6px);box-shadow:0 8px 22px rgba(20,21,24,.08)}
+  .incitem .check{
+    flex:none;width:24px;height:24px;border-radius:50%;
+    background:rgba(30,159,214,.1);color:var(--orange);
+    display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;
+  }
+  .statebadge{
+    margin-top:22px;display:inline-flex;align-items:center;gap:10px;
+    background:rgba(31,191,95,.09);border:1px solid rgba(31,191,95,.3);
+    color:#12813e;font-size:14px;font-weight:600;padding:12px 22px;border-radius:var(--pill);
+  }
+  @media (max-width:820px){.incwrap{grid-template-columns:1fr}}
+
+  .spectable{margin-top:44px;border-top:1px solid var(--line)}
+  .specrow{
+    display:grid;grid-template-columns:230px 1fr;gap:20px;
+    padding:16px 4px;border-bottom:1px solid var(--line);font-size:15px;
+  }
+  .specrow .k{color:var(--soft)}
+  .specrow .v{font-weight:500}
+  @media (max-width:640px){.specrow{grid-template-columns:1fr;gap:3px;padding:13px 2px}}
+
+  .cta-final{
+    position:relative;overflow:hidden;text-align:center;color:#fff;
+    padding:clamp(90px,14vh,160px) 20px;
+  }
+  .cta-bg{position:absolute;inset:-12% 0;z-index:-1}
+  .cta-bg img{width:100%;height:100%;object-fit:cover;object-position:center 62%;will-change:transform}
+  .cta-bg::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(10,11,13,.72), rgba(10,11,13,.38) 45%, rgba(10,11,13,.78));
+  }
+  .cta-final .kicker{color:var(--orange-soft)}
+  .cta-final h2{color:#fff;text-shadow:0 4px 24px rgba(0,0,0,.6)}
+  .cta-final .lead{color:#c9ccd2;margin-left:auto;margin-right:auto;text-shadow:0 2px 12px rgba(0,0,0,.7)}
+  .cta-final .price{
+    font-size:clamp(46px,7vw,76px);font-weight:600;letter-spacing:-.03em;margin-top:22px;
+    text-shadow:0 4px 30px rgba(0,0,0,.6);
+  }
+  .cta-final .price em{
+    font-style:normal;
+    background:linear-gradient(100deg,var(--orange-soft) 42%,#e0f4fc 50%,var(--orange-soft) 58%);
+    background-size:220% 100%;
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    animation:shimmer 3.6s linear infinite;
+  }
+  .cta-final .ctas{margin-top:30px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .cta-final .btn-orange{padding:17px 36px;font-size:17px}
+  .urgency{
+    margin-top:20px;font-size:14px;font-weight:600;color:#d6effb;
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    text-shadow:0 2px 12px rgba(0,0,0,.7);
+  }
+
+  footer{color:#9a9ea6;font-size:12px;text-align:center;padding:26px 20px 44px;border-top:1px solid var(--line)}
+
+  .wa-float{
+    position:fixed;right:18px;bottom:18px;z-index:80;width:60px;height:60px;border-radius:50%;
+    background:linear-gradient(180deg,#25d366,var(--wa-dark));
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 12px 30px rgba(31,191,95,.4);
+    animation:waPulse 2.4s infinite;transition:transform .18s ease;
+  }
+  .wa-float:hover{transform:scale(1.08)}
+  .wa-float svg{width:30px;height:30px}
+  @keyframes waPulse{
+    0%{box-shadow:0 12px 30px rgba(31,191,95,.4),0 0 0 0 rgba(31,191,95,.4)}
+    70%{box-shadow:0 12px 30px rgba(31,191,95,.4),0 0 0 16px rgba(31,191,95,0)}
+    100%{box-shadow:0 12px 30px rgba(31,191,95,.4),0 0 0 0 rgba(31,191,95,0)}
+  }
+
+  .reveal{
+    opacity:0;transform:translateY(28px);filter:blur(10px);
+    transition:opacity .8s ease,transform .8s ease,filter .8s ease;
+    transition-delay:var(--d,0s);
+  }
+  .reveal.in{opacity:1;transform:none;filter:none}
+
+  @media (prefers-reduced-motion:reduce){
+    .strip .track,.badge .dot,.wa-float,.btn-orange::after,.pricebox .now em,
+    .cta-final .price em,.darksec::before,.bat.in .fill,
+    .anim,.chip,.ghost,.droneFloat,.droneshadow,.scrollhint,.scrollhint::before{animation:none}
+    .anim,.chip,.ghost,.droneshadow{opacity:1}
+    .pricebox .now em,.cta-final .price em{color:var(--orange);background:none}
+    .reveal{opacity:1;transform:none;filter:none;transition:none}
+    .bat .fill,.incitem{transition:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<div id="progress" aria-hidden="true"></div>
+
+<nav class="productbar" aria-label="Barra de producto">
+  <span class="name">DJI Mini 3 Pro</span>
+  <span class="right">
+    <span class="price"><b>USD 800</b> · 5 baterías</span>
+    <a class="btn btn-orange small" href="https://wa.me/5493425084541?text=Hola!%20Me%20interesa%20el%20DJI%20Mini%203%20Pro%20%F0%9F%9A%80" target="_blank" rel="noopener">
+      <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-2-1.2 7.4 7.4 0 0 1-1.4-1.7c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5v-.5c0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3a3 3 0 0 0-1 2.2c0 1.3 1 2.6 1.1 2.8.1.2 1.9 3 4.7 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2 0-.1-.2-.2-.4-.3Z"/></svg>
+      Comprar
+    </a>
+  </span>
+</nav>
+
+<header class="hero" id="hero">
+  <div class="herocontent" id="herocontent">
+    <div class="badge anim a1"><span class="dot"></span>Única unidad · Excelente estado</div>
+    <h1 class="anim a2">DJI Mini 3 Pro <span class="thin">con 5 baterías</span></h1>
+    <p class="tagline anim a3">Menos de 249 g. Cámara nivel cine. <b>Casi 3 horas de vuelo.</b></p>
+    <div class="pricebox anim a4">
+      <div class="was">Este combo nuevo cuesta más de <s>USD 1.100</s></div>
+      <div class="now"><em>USD 800</em><small>PRECIO FINAL</small></div>
+    </div>
+    <div class="ctas anim a5">
+      <a class="btn btn-orange" href="https://wa.me/5493425084541?text=Hola!%20Me%20interesa%20el%20DJI%20Mini%203%20Pro%20%F0%9F%9A%80" target="_blank" rel="noopener">
+        <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-2-1.2 7.4 7.4 0 0 1-1.4-1.7c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5v-.5c0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3a3 3 0 0 0-1 2.2c0 1.3 1 2.6 1.1 2.8.1.2 1.9 3 4.7 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2 0-.1-.2-.2-.4-.3Z"/></svg>
+        Lo quiero — WhatsApp
+      </a>
+      <a class="btn btn-quiet" href="#specs">Ver especificaciones</a>
+    </div>
+    <p class="microcopy anim a6">Podés probarlo antes de comprar · Respondo al toque</p>
+  </div>
+
+  <!-- Escenario: drone volando sobre tipografía fantasma -->
+  <div class="stage" id="stage">
+    <div class="ghost" id="ghost" aria-hidden="true">MINI 3 PRO</div>
+    <span class="chip c1" data-depth="26"><span class="inner"><b>4K/60</b> HDR</span></span>
+    <span class="chip c2" data-depth="-34"><span class="inner"><b>&lt;249 g</b> sin registro</span></span>
+    <span class="chip c3" data-depth="18"><span class="inner"><b>2h 50min</b> de vuelo</span></span>
+    <div class="droneOuter" id="droneOuter">
+      <div class="droneFloat">
+        <img src="images/hero-drone.webp" alt="DJI Mini 3 Pro con hélices desplegadas" width="1000" height="306">
+      </div>
+      <div class="droneshadow" aria-hidden="true"></div>
+    </div>
+  </div>
+  <div class="scrollhint" aria-hidden="true"></div>
+</header>
+
+<div class="strip" aria-hidden="true">
+  <div class="track">
+    <span>4K/60 HDR <i>·</i></span><span>Menos de 249 g <i>·</i></span><span>5 baterías <i>·</i></span><span>48 MP RAW <i>·</i></span><span>12 km de alcance <i>·</i></span><span>ActiveTrack <i>·</i></span><span>Video vertical <i>·</i></span><span>USD 800 <i>·</i></span>
+    <span>4K/60 HDR <i>·</i></span><span>Menos de 249 g <i>·</i></span><span>5 baterías <i>·</i></span><span>48 MP RAW <i>·</i></span><span>12 km de alcance <i>·</i></span><span>ActiveTrack <i>·</i></span><span>Video vertical <i>·</i></span><span>USD 800 <i>·</i></span>
+  </div>
+</div>
+
+<div class="highlights">
+  <div class="grid">
+    <div class="hl reveal"><div class="big">&lt;<span class="count" data-to="249">0</span><span class="u">g</span></div><div class="label">Peso de despegue</div></div>
+    <div class="hl reveal"><div class="big">4K/<span class="count" data-to="60">0</span></div><div class="label">Video HDR</div></div>
+    <div class="hl reveal"><div class="big"><span class="count" data-to="48">0</span><span class="u">MP</span></div><div class="label">Sensor 1/1.3″</div></div>
+    <div class="hl reveal"><div class="big"><span class="count" data-to="170">0</span><span class="u">min</span></div><div class="label">De vuelo total</div></div>
+    <div class="hl reveal"><div class="big"><span class="count" data-to="12">0</span><span class="u">km</span></div><div class="label">Transmisión O3</div></div>
+  </div>
+</div>
+
+<section id="camara">
+  <div class="container">
+    <p class="kicker reveal">De cerca</p>
+    <h2 class="reveal">Mirá lo que te llevás.</h2>
+
+    <div class="edrow">
+      <div class="photo reveal tilt"><img src="images/lente-macro.webp" alt="Macro de la lente del DJI Mini 3 Pro" data-px="26"></div>
+      <div class="reveal">
+        <h3>Una cámara que no parece de un drone de 249 gramos.</h3>
+        <p>Sensor 1/1.3″ de 48 MP con apertura f/1.7: más luz, menos ruido, atardeceres y tomas nocturnas que impresionan. Video 4K hasta 60 fps con HDR, fotos RAW y perfil D-Cinelike para colorizar en post.</p>
+        <div class="mini">
+          <div><b>48 MP</b><span>Fotos RAW</span></div>
+          <div><b>f/1.7</b><span>Apertura</span></div>
+          <div><b>4K/60</b><span>HDR</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="edrow flip">
+      <div class="photo reveal tilt"><img src="images/sensores.webp" alt="Sensores frontales y gimbal del Mini 3 Pro" data-px="26"></div>
+      <div class="reveal">
+        <h3>Ve los obstáculos antes que vos.</h3>
+        <p>Sensores frontales, traseros e inferiores con APAS: detecta ramas, paredes y cables, y los esquiva automáticamente. El gimbal de 3 ejes rota 90° para video vertical nativo — Reels y TikTok sin recortar.</p>
+        <div class="mini">
+          <div><b>3 vías</b><span>Detección</span></div>
+          <div><b>90°</b><span>Modo vertical</span></div>
+          <div><b>APAS</b><span>Esquive auto</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="edrow">
+      <div class="photo reveal tilt"><img src="images/plegado-perfil.webp" alt="DJI Mini 3 Pro plegado de perfil" data-px="26"></div>
+      <div class="reveal">
+        <h3>Se pliega. Entra en cualquier bolso. Viaja con vos.</h3>
+        <p>Con menos de 249 g, en la mayoría de los países vuela sin registro. Transmisión DJI O3 con video en vivo 1080p y hasta 12 km de alcance, GPS + Galileo + BeiDou y regreso a casa automático.</p>
+        <div class="mini">
+          <div><b>&lt;249 g</b><span>Sin registro*</span></div>
+          <div><b>12 km</b><span>Alcance O3</span></div>
+          <div><b>RTH</b><span>Vuelve solo</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="darksec">
+    <div class="darkwrap">
+      <div class="photo reveal tilt"><img src="images/cenital-oscura.webp" alt="DJI Mini 3 Pro visto desde arriba sobre superficie oscura" data-px="24"></div>
+      <div>
+        <p class="kicker reveal">El diferencial</p>
+        <h2 class="reveal">5 baterías.<br>Un día entero de rodaje.</h2>
+        <p class="lead reveal">La mayoría vende el drone con 1 o 2 baterías. Este viene con <b>cinco</b> — 34 minutos de vuelo cada una.</p>
+        <div class="batrow reveal">
+          <div class="bat"><div class="fill"></div><div class="num">1</div></div>
+          <div class="bat"><div class="fill"></div><div class="num">2</div></div>
+          <div class="bat"><div class="fill"></div><div class="num">3</div></div>
+          <div class="bat"><div class="fill"></div><div class="num">4</div></div>
+          <div class="bat"><div class="fill"></div><div class="num">5</div></div>
+        </div>
+        <div class="battotal reveal">= hasta <span>2 h 50 min</span> en el aire</div>
+        <p class="batsub reveal">Filmá una jornada completa sin parar a cargar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0" id="galeria">
+  <div class="container">
+    <div class="extras">
+      <div class="exshot reveal tilt"><img src="images/gimbal-macro.webp" alt="Macro de la cámara del gimbal" data-px="20"><div class="cap">Gimbal mecánico de 3 ejes</div></div>
+      <div class="exshot reveal tilt"><img src="images/mano-guante.webp" alt="DJI Mini 3 Pro sostenido en la mano" data-px="20"><div class="cap">Liviano de verdad</div></div>
+      <div class="exshot reveal tilt"><img src="images/pedestal.webp" alt="DJI Mini 3 Pro plegado sobre pedestal" data-px="20"><div class="cap">Compacto plegado</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="includes" id="incluye">
+  <div class="container">
+    <p class="kicker reveal">Qué recibís</p>
+    <h2 class="reveal">Todo incluido</h2>
+    <div class="incwrap">
+      <div class="incphoto reveal">
+        <img src="images/combo-incluye.webp" alt="Combo: DJI Mini 3 Pro, control RC-N1 y baterías">
+      </div>
+      <div>
+        <div class="inclist">
+          <div class="incitem reveal"><span class="check">✓</span>Drone DJI Mini 3 Pro</div>
+          <div class="incitem reveal"><span class="check">✓</span>5 baterías de vuelo inteligentes</div>
+          <div class="incitem reveal"><span class="check">✓</span>Control remoto DJI RC-N1</div>
+          <div class="incitem reveal"><span class="check">✓</span>Hélices de repuesto</div>
+          <div class="incitem reveal"><span class="check">✓</span>Cables y accesorios originales</div>
+        </div>
+        <div class="statebadge reveal">★ Equipo en excelente estado — funcionando perfecto</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="specs" id="specs">
+  <div class="container">
+    <p class="kicker reveal">Ficha técnica</p>
+    <h2 class="reveal">Especificaciones</h2>
+    <div class="spectable reveal">
+      <div class="specrow"><span class="k">Peso de despegue</span><span class="v">&lt;249 g</span></div>
+      <div class="specrow"><span class="k">Sensor</span><span class="v">CMOS 1/1.3″ · 48 MP efectivos</span></div>
+      <div class="specrow"><span class="k">Lente</span><span class="v">FOV 82.1° · 24 mm (equiv.) · f/1.7</span></div>
+      <div class="specrow"><span class="k">Video</span><span class="v">4K 3840×2160 hasta 60 fps · HDR · H.264/H.265 · 150 Mbps</span></div>
+      <div class="specrow"><span class="k">Cámara lenta</span><span class="v">1080p a 120 fps</span></div>
+      <div class="specrow"><span class="k">Foto</span><span class="v">48 MP · JPEG + DNG (RAW) · Panorámicas · AEB</span></div>
+      <div class="specrow"><span class="k">Gimbal</span><span class="v">Mecánico de 3 ejes · disparo vertical 90°</span></div>
+      <div class="specrow"><span class="k">Tiempo de vuelo</span><span class="v">34 min por batería · hasta ~2 h 50 min con las 5</span></div>
+      <div class="specrow"><span class="k">Velocidad máx.</span><span class="v">16 m/s (modo Sport)</span></div>
+      <div class="specrow"><span class="k">Resistencia al viento</span><span class="v">10.7 m/s (nivel 5)</span></div>
+      <div class="specrow"><span class="k">Sensores</span><span class="v">Frontal, trasero e inferior · APAS · aterrizaje de precisión</span></div>
+      <div class="specrow"><span class="k">Transmisión</span><span class="v">DJI O3 · 1080p en vivo · hasta 12 km (FCC)</span></div>
+      <div class="specrow"><span class="k">GNSS</span><span class="v">GPS + Galileo + BeiDou · RTH automático</span></div>
+      <div class="specrow"><span class="k">Control</span><span class="v">DJI RC-N1 (se usa con tu celular)</span></div>
+      <div class="specrow"><span class="k">App</span><span class="v">DJI Fly (iOS / Android)</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final" id="contacto">
+  <div class="cta-bg" aria-hidden="true"><img src="images/pizarra-fondo.webp" alt="" data-px="60"></div>
+  <p class="kicker reveal">Hacelo tuyo</p>
+  <h2 class="reveal">Mañana podés estar volándolo.</h2>
+  <p class="lead reveal">Escribime, coordinamos y lo probás antes de comprarlo. Sin vueltas.</p>
+  <div class="price reveal"><em>USD 800</em></div>
+  <div class="ctas reveal">
+    <a class="btn btn-orange" href="https://wa.me/5493425084541?text=Hola!%20Me%20interesa%20el%20DJI%20Mini%203%20Pro%20%F0%9F%9A%80" target="_blank" rel="noopener">
+      <svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-2-1.2 7.4 7.4 0 0 1-1.4-1.7c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5v-.5c0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3a3 3 0 0 0-1 2.2c0 1.3 1 2.6 1.1 2.8.1.2 1.9 3 4.7 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2 0-.1-.2-.2-.4-.3Z"/></svg>
+      Escribime por WhatsApp
+    </a>
+  </div>
+  <div class="urgency reveal">⚡ Única unidad — el primero que escribe, se lo lleva</div>
+</section>
+
+<footer>
+  Venta particular. DJI y Mini 3 Pro son marcas de SZ DJI Technology Co., Ltd. Esta página no está afiliada a DJI. *Consultá la normativa de vuelo de tu país.
+</footer>
+
+<a class="wa-float" href="https://wa.me/5493425084541?text=Hola!%20Me%20interesa%20el%20DJI%20Mini%203%20Pro%20%F0%9F%9A%80" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-2-1.2 7.4 7.4 0 0 1-1.4-1.7c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5v-.5c0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3a3 3 0 0 0-1 2.2c0 1.3 1 2.6 1.1 2.8.1.2 1.9 3 4.7 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2 0-.1-.2-.2-.4-.3Z"/></svg>
+</a>
+
+<script>
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Reveal con stagger */
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach((e,i)=>{
+      if(!e.isIntersecting) return;
+      e.target.style.setProperty('--d', (i*0.09)+'s');
+      e.target.classList.add('in');
+      e.target.querySelectorAll('.bat').forEach((b,j)=>setTimeout(()=>b.classList.add('in'), 400+j*180));
+      e.target.querySelectorAll('.count').forEach(el=>animateCount(el));
+      io.unobserve(e.target);
+    });
+  },{threshold:.18});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  function animateCount(el){
+    const to = parseInt(el.dataset.to,10);
+    if(reduced){ el.textContent = to; return; }
+    const dur = 1200, start = performance.now();
+    function tick(now){
+      const p = Math.min((now-start)/dur,1);
+      el.textContent = Math.round(to * (1-Math.pow(1-p,3)));
+      if(p<1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  /* Progreso + parallax + salida del hero */
+  const bar = document.getElementById('progress');
+  const heroContent = document.getElementById('herocontent');
+  const stage = document.getElementById('stage');
+  const droneOuter = document.getElementById('droneOuter');
+  const ghost = document.getElementById('ghost');
+  const chips = Array.from(document.querySelectorAll('.chip'));
+  const pxEls = reduced ? [] : Array.from(document.querySelectorAll('[data-px]'));
+  let ticking = false;
+
+  function frame(){
+    ticking = false;
+    const doc = document.documentElement;
+    const max = doc.scrollHeight - innerHeight;
+    bar.style.width = (max>0 ? (scrollY/max)*100 : 0) + '%';
+
+    if(!reduced){
+      /* Salida cinematográfica del hero: el texto sube y se desvanece, el drone "despega" */
+      const y = scrollY;
+      if(y < innerHeight*1.2){
+        heroContent.style.opacity = Math.max(0, 1 - y/420);
+        heroContent.style.transform = 'translateY(' + (-y*0.22) + 'px)';
+        if(stage) stage.style.transform = 'translateY(' + (-y*0.34) + 'px) scale(' + (1 + y*0.0004) + ')';
+        if(ghost) ghost.style.opacity = Math.max(0, 1 - y/300);
+      }
+      /* Parallax general */
+      for(const el of pxEls){
+        const host = el.closest('.photo, .exshot, .cta-bg') || el;
+        const r = host.getBoundingClientRect();
+        if(r.bottom < -100 || r.top > innerHeight+100) continue;
+        const c = (r.top + r.height/2 - innerHeight/2) / innerHeight;
+        el.style.transform = 'translateY(' + (-c * parseFloat(el.dataset.px)) + 'px)';
+      }
+    }
+  }
+  function onScroll(){ if(!ticking){ ticking = true; requestAnimationFrame(frame); } }
+  addEventListener('scroll', onScroll, {passive:true});
+  addEventListener('resize', onScroll);
+  frame();
+
+  /* Pilotear el drone con el mouse: banking + profundidad en chips y tipografía fantasma */
+  if(!reduced && matchMedia('(pointer:fine)').matches){
+    const hero = document.getElementById('hero');
+    let tx=0, ty=0, cx=0, cy=0, raf=null;
+    hero.addEventListener('mousemove', e=>{
+      const r = hero.getBoundingClientRect();
+      tx = (e.clientX - r.left)/r.width - .5;
+      ty = (e.clientY - r.top)/r.height - .5;
+      if(!raf) loop();
+    });
+    hero.addEventListener('mouseleave', ()=>{ tx=0; ty=0; });
+    function loop(){
+      cx += (tx-cx)*.07; cy += (ty-cy)*.07;
+      droneOuter.style.transform =
+        'translate(' + (cx*34) + 'px,' + (cy*22) + 'px)' +
+        ' rotateZ(' + (cx*4) + 'deg) rotateX(' + (-cy*5) + 'deg) rotateY(' + (cx*6) + 'deg)';
+      if(ghost) ghost.style.transform = 'translate(calc(-50% + ' + (-cx*18) + 'px), calc(-54% + ' + (-cy*10) + 'px))';
+      chips.forEach(ch=>{
+        const d = parseFloat(ch.dataset.depth||20);
+        ch.style.marginLeft = (cx*d) + 'px';
+        ch.style.marginTop = (cy*d*.6) + 'px';
+      });
+      if(Math.abs(tx-cx)>.001 || Math.abs(ty-cy)>.001){ raf = requestAnimationFrame(loop); }
+      else{ raf = null; }
+    }
+  }
+
+  /* Tilt 3D en fotos */
+  if(!reduced && matchMedia('(pointer:fine)').matches){
+    document.querySelectorAll('.tilt').forEach(card=>{
+      card.addEventListener('mousemove', e=>{
+        const r = card.getBoundingClientRect();
+        const x = (e.clientX - r.left)/r.width - .5;
+        const y = (e.clientY - r.top)/r.height - .5;
+        card.style.transform = 'perspective(900px) rotateY(' + (x*6) + 'deg) rotateX(' + (-y*6) + 'deg) scale(1.015)';
+      });
+      card.addEventListener('mouseleave', ()=>{ card.style.transform = ''; });
+    });
+  }
+</script>
+
+</body>
+</html>
